@@ -1,4 +1,0 @@
-MultiProc
-=========
-
-Linearization and synchronization
