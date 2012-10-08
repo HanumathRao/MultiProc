@@ -1,23 +1,25 @@
 package core;
 
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 public class Main {
 	/*
 	 *  @Author Arijit
 	 */
 	public static void main(String args[]){
 		
-	}
-}
-
-class NQuasiQ{
-	int[][] array= new int[5][5];
-	final int size = 5;
-	
-	public void enq(int i){
-		for(int i = 0 ;i <)
-	}
-	
-	public int deq(){
+		Queue<Message> msgQ = new ConcurrentLinkedQueue<Message>();
+		
+		Producer producer = new Producer(msgQ);
+		Consumer consumer = new Consumer(msgQ);
+		
+		Thread producerThread = new Thread(producer);
+		Thread consumerThread = new Thread(consumer);
+		
+		producerThread.start();
+		consumerThread.start();
 		
 	}
 }
+
