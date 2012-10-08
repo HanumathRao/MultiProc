@@ -17,8 +17,10 @@ public class Main {
 		Thread producerThread = new Thread(producer);
 		Thread consumerThread = new Thread(consumer);
 		
+		
+		
 		producerThread.start();
-		consumerThread.start();
+		consumerThread.start();		
 		try {
 			producerThread.join();
 			consumerThread.join();
@@ -28,7 +30,7 @@ public class Main {
 		}
 		
 		long endTime = System.nanoTime();
-		System.out.println("Total time taken : "+(endTime - startTime));
+		System.out.println("Total time taken : "+(long)((endTime - startTime)/1000000));
 	}
 }
 

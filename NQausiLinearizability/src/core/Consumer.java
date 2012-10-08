@@ -2,39 +2,28 @@ package core;
 
 import java.util.Queue;
 
-public class Consumer implements Runnable{
-	
+public class Consumer implements Runnable {
+
 	private Queue<Message> msgQ;
-	private static long max = 2000000000; 
+	private static long max = 50;
+
 	public Consumer(Queue<Message> msgQ) {
 		this.msgQ = msgQ;
 	}
 
 	@Override
-	public void run(){
-		long i = 0 ;
-		while(i < max){
-			consume();
-			try{
-				synchronized (msgQ) {
-					msgQ.wait();
+	public void run() {
+		long i = 0;
+		while (i < max) {
+			synchronized (msgQ) {
+				if(!msgQ.isEmpty()){
+					Message msg = msgQ.poll();
+					System.out.println("Consumer : "+msg.toString());
+					++i;
 				}
-			}catch(InterruptedException ex){
-				ex.printStackTrace();
-			}
-			finally{
-				++i;
 			}
 		}
+		System.out.println("Exiting Consumer thread");
 	}
 
-	private void consume() {
-		while(!msgQ.isEmpty()){
-			Message msg = msgQ.poll();
-			if(msg != null){
-				System.out.println("Consumer : "+msg.toString());
-			}
-		}
-		
-	}
 }
