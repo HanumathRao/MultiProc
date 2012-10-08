@@ -5,14 +5,15 @@ import java.util.Queue;
 public class Consumer implements Runnable{
 	
 	private Queue<Message> msgQ;
-	
+	private static long max = 2000000000; 
 	public Consumer(Queue<Message> msgQ) {
 		this.msgQ = msgQ;
 	}
 
 	@Override
 	public void run(){
-		while(true){
+		long i = 0 ;
+		while(i < max){
 			consume();
 			try{
 				synchronized (msgQ) {
@@ -20,6 +21,9 @@ public class Consumer implements Runnable{
 				}
 			}catch(InterruptedException ex){
 				ex.printStackTrace();
+			}
+			finally{
+				++i;
 			}
 		}
 	}

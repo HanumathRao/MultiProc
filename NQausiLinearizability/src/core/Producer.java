@@ -4,25 +4,20 @@ import java.util.Queue;
 import java.util.Random;
 
 public class Producer implements Runnable{
-	private final Random randomNumber = new Random();
 	private static int counter = 0 ;
 	private Queue<Message> messageQueue;
-	
+
 	public Producer(Queue<Message> messageQueue) {
 		// TODO Auto-generated constructor stub
 		this.messageQueue = messageQueue;
 	}
 	
 	public void run(){
-		while(true){
+		long i = 0L;
+		// Running the code for 2 billion time
+		while(i < 2000000000){ 
 			produce();
-			int waitTime = randomNumber.nextInt(1000);
-			/*try{
-				Thread.currentThread();
-				Thread.sleep(waitTime);
-			}catch(InterruptedException ex){
-				ex.printStackTrace();
-			}*/
+			i++;
 		}
 		
 	}
