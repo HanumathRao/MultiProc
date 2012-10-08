@@ -5,6 +5,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 import javax.swing.JOptionPane;
 
+import stconc.Consumer;
+import stconc.Message;
+import stconc.Producer;
+
 public class Main {
 	/*
 	 * @Author Arijit

@@ -1,4 +1,4 @@
-package core;
+package stconc;
 
 public class Message {
 	private String msg;
