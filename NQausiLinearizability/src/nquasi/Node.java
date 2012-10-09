@@ -4,6 +4,10 @@ public class Node {
 	private final int SIZE = 9;
 	private int[] nodeArray = new int[SIZE];
 	private static int counter = 0;
+	public Node(){}
+	public Node(int num) {
+		addElement(num);
+	}
 	public int[] getNodeArray() {
 		return nodeArray;
 	}
