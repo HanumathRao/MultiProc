@@ -22,7 +22,7 @@ public class NQuasiLinearizableQueue {
 			return;
 		}
 		
-		Node n = nodes[tail];
+		Node n = nodes[tail%SIZE];
 		n.addElement(number);
 		++tail;
 	}
@@ -30,13 +30,13 @@ public class NQuasiLinearizableQueue {
 	public int dequeue(){
 		int retval;
 		if(head == tail){
-			System.out.println("List is empty");
+			System.out.println("Queue is empty");
 			return -999;
 		}
 		synchronized (nodes) {
-			Node n = nodes[head];
+			Node n = nodes[head%SIZE];
 			int[] cells = n.getNodeArray();
-			int r = rand.nextInt(cells.length);
+			int r = rand.nextInt(cells.length-1);
 			retval = cells[r];
 			++head;
 		}
