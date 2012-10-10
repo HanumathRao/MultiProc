@@ -3,9 +3,9 @@ package nquasi;
 public class NProducer implements Runnable {
 	
 	private static final int MAX_ITERATION =50;
-	private NQuasiLinearizableQueue nQueue;
+	private NQuasiLinearizableQueueDynamic nQueue;
 	
-	public NProducer(NQuasiLinearizableQueue nQueue) {
+	public NProducer(NQuasiLinearizableQueueDynamic nQueue) {
 		this.nQueue = nQueue;
 	}
 	

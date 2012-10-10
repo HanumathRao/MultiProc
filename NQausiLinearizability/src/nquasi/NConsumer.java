@@ -1,10 +1,10 @@
 package nquasi;
 
 public class NConsumer implements Runnable {
-	private NQuasiLinearizableQueue nqueue;
+	private NQuasiLinearizableQueueDynamic nqueue;
 	private static final int MAX_ITERATION = 50;
 	
-	public NConsumer(NQuasiLinearizableQueue nqueue) {
+	public NConsumer(NQuasiLinearizableQueueDynamic nqueue) {
 		this.nqueue = nqueue;
 	}
 	

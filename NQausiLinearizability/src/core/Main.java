@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import nquasi.NConsumer;
 import nquasi.NProducer;
 import nquasi.NQuasiLinearizableQueue;
+import nquasi.NQuasiLinearizableQueueDynamic;
 
 import stconc.Consumer;
 import stconc.Message;
@@ -51,7 +52,7 @@ public class Main {
 
 	public static void measureNQuasiQ() {
 		long startTime = System.nanoTime();
-		NQuasiLinearizableQueue nqueu = new NQuasiLinearizableQueue();
+		NQuasiLinearizableQueueDynamic nqueu = new NQuasiLinearizableQueueDynamic(Main.numberOfThreads);
 		for (int i = 0; i < Main.numberOfThreads; ++i) {
 			NProducer producer = new NProducer(nqueu);
 			NConsumer consumer = new NConsumer(nqueu);
