@@ -82,8 +82,8 @@ public class Main {
 		Main.numberOfThreads = Integer
 				.parseInt(JOptionPane
 						.showInputDialog("Enter the number of producer and consumer threads"));
-		measureConLinkQ();
-		System.out.println("\n******************************************************\n");
+//		measureConLinkQ();
+//		System.out.println("\n******************************************************\n");
 		measureNQuasiQ();
 	}
 }
