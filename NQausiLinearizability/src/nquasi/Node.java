@@ -1,7 +1,7 @@
 package nquasi;
 
 public class Node {
-	private final int SIZE = 9;
+	private final int SIZE = 100;
 	private int[] nodeArray = new int[SIZE];
 	private static int counter = 0;
 	public Node(){}

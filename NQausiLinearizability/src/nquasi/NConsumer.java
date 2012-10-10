@@ -10,7 +10,17 @@ public class NConsumer implements Runnable {
 	
 	public void run(){
 		for(int i =0 ;i<MAX_ITERATION; ++i){
-			consume();
+			synchronized (nqueue) {
+				if(nqueue.isEmpty()){
+					try{
+						Thread.currentThread().wait();
+					}catch(InterruptedException ex){
+						ex.printStackTrace();
+					}
+				}
+				consume();
+			}
+			
 		}
 	}
 	

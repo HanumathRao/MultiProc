@@ -17,6 +17,9 @@ public class NProducer implements Runnable {
 	
 	public void produce(int i){
 			nQueue.enqueue(i);
+			synchronized (nQueue) {
+				nQueue.notifyAll();
+			}
 	}
 
 }
