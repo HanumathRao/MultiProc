@@ -1,20 +1,12 @@
 package stconc;
 
 public class Message {
-	private String msg;
 	private int id;
 	
 	public Message(int id, String msg) {
-		this.msg= msg;
 		this.id = id;
 	}
 	
-	public String getMsg() {
-		return msg;
-	}
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
 	public int getId() {
 		return id;
 	}
@@ -23,6 +15,6 @@ public class Message {
 	}
 	@Override
 	public String toString(){
-		return "Message { id : "+id+" ,mesage : "+msg+" }";
+		return "Message { id : "+id+" }";
 	}
 }

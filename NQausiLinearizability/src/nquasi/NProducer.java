@@ -20,6 +20,7 @@ public class NProducer implements Runnable {
 			synchronized (nQueue) {
 				nQueue.notifyAll();
 			}
+		System.out.println("Producer : Message { id : "+i+" }");
 	}
 
 }

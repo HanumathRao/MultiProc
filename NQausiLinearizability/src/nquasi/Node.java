@@ -1,11 +1,14 @@
 package nquasi;
 
 public class Node {
-	private final int SIZE = 100;
+	private final int SIZE = 1000;
 	private int[] nodeArray = new int[SIZE];
-	private static int counter = 0;
-	public Node(){}
+	private static int counter;
+	public Node(){
+		counter = 0 ;
+	}
 	public Node(int num) {
+		this();
 		addElement(num);
 	}
 	public int[] getNodeArray() {
@@ -22,4 +25,5 @@ public class Node {
 	public int getElement(int index){
 		return nodeArray[index];
 	}
+	
 }

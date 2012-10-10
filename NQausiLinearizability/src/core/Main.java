@@ -63,8 +63,8 @@ public class Main {
 			consumerThread.start();
 
 			try {
-				consumerThread.join();
 				producerThread.join();
+				consumerThread.join();
 			} catch (InterruptedException ex) {
 				ex.printStackTrace();
 			}
@@ -81,7 +81,8 @@ public class Main {
 		Main.numberOfThreads = Integer
 				.parseInt(JOptionPane
 						.showInputDialog("Enter the number of producer and consumer threads"));
-	//	measureConLinkQ();
+		measureConLinkQ();
+		System.out.println("\n******************************************************\n");
 		measureNQuasiQ();
 	}
 }

@@ -13,7 +13,7 @@ public class NConsumer implements Runnable {
 			synchronized (nqueue) {
 				if(nqueue.isEmpty()){
 					try{
-						Thread.currentThread().wait();
+						nqueue.wait();
 					}catch(InterruptedException ex){
 						ex.printStackTrace();
 					}
@@ -25,7 +25,8 @@ public class NConsumer implements Runnable {
 	}
 	
 	public void consume(){
-		nqueue.dequeue();
+		
+		System.out.println("Producer : Message { id : "+nqueue.dequeue()+" }");
 	}
 
 }
