@@ -26,11 +26,7 @@ public class NProducer implements Runnable {
  */
 	public void produce(int i){
 			nQueue.enqueue(i);
-//			Notify all the consumer threads which are waiting when the threads are empty.
-			synchronized (nQueue) {
-				nQueue.notifyAll();
-			}
-		System.out.println("Producer : Message { id : "+i+" }");
+			System.out.println("Producer : Message { id : "+i+" }");
 	}
 
 }

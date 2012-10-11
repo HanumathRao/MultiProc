@@ -1,16 +1,21 @@
 package stconc;
 
+import java.lang.reflect.Constructor;
 import java.util.Queue;
 
 public class Producer implements Runnable {
 	private static int counter = 0;
 	private Queue<Message> messageQueue;
-
+/**
+ * {@link Constructor}
+ */
 	public Producer(Queue<Message> messageQueue) {
-		// TODO Auto-generated constructor stub
 		this.messageQueue = messageQueue;
 	}
 
+	/**
+	 * Produce method should add up data asynchronously
+	 */
 	public void run() {
 		long i = 0L;
 		// Running the code for 2 billion time
@@ -25,11 +30,6 @@ public class Producer implements Runnable {
 		Message msg = new Message(counter, "Data message");
 		++counter;
 		this.messageQueue.offer(msg);
-		synchronized (messageQueue) {
-			messageQueue.notifyAll();
-			System.out.println("Producer : " + msg);
-		}
-
 	}
 
 }
