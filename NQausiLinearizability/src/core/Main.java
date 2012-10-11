@@ -20,8 +20,9 @@ public class Main {
 	 */
 
 	public static int numberOfThreads = 0;
+	
 
-	public static void measureConLinkQ() {
+	public static long measureConLinkQ() {
 
 		long startTime = System.nanoTime();
 		Queue<Message> msgQ = new ConcurrentLinkedQueue<Message>();
@@ -46,13 +47,13 @@ public class Main {
 		}
 
 		long endTime = System.nanoTime();
-		System.out.println("Total time taken in mili seconds : "
-				+ (long) ((endTime - startTime) / 1000000));
+		return (long) ((endTime - startTime) / 1000000);
 	}
 
-	public static void measureNQuasiQ() {
+	public static long measureNQuasiQ() {
 		long startTime = System.nanoTime();
-		NQuasiLinearizableQueueDynamic nqueu = new NQuasiLinearizableQueueDynamic(Main.numberOfThreads);
+		NQuasiLinearizableQueueDynamic nqueu = new NQuasiLinearizableQueueDynamic(
+				Main.numberOfThreads);
 		for (int i = 0; i < Main.numberOfThreads; ++i) {
 			NProducer producer = new NProducer(nqueu);
 			NConsumer consumer = new NConsumer(nqueu);
@@ -71,9 +72,9 @@ public class Main {
 			}
 
 		}
-		
+
 		long endTime = System.nanoTime();
-		System.out.println("Total time taken in mili seconds : "+(long)((endTime-startTime)/1000000));
+		return  (long) ((endTime - startTime) / 1000000);
 
 	}
 
@@ -82,8 +83,11 @@ public class Main {
 		Main.numberOfThreads = Integer
 				.parseInt(JOptionPane
 						.showInputDialog("Enter the number of producer and consumer threads"));
-//		measureConLinkQ();
-//		System.out.println("\n******************************************************\n");
-		measureNQuasiQ();
+		
+		long stdPerformance = measureConLinkQ();;
+		long myPerformance = measureNQuasiQ();
+
+		System.out.println("Std Performance " + stdPerformance
+				+ " My Performance : " + myPerformance);
 	}
 }

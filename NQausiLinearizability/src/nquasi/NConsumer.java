@@ -9,7 +9,19 @@ public class NConsumer implements Runnable {
 	}
 
 	public void run() {
-		for (int i = 0; i < MAX_ITERATION; ++i) {
+		int i = 0;
+		while (i < MAX_ITERATION) {
+			synchronized (nqueue) {
+				if (!nqueue.isEmpty()) {
+					consume();
+					++i;
+				}
+
+			}
+
+		}
+
+		/*for (i = 0; i < MAX_ITERATION; ++i) {
 			synchronized (nqueue) {
 				if (nqueue.isEmpty()) {
 					try {
@@ -21,8 +33,7 @@ public class NConsumer implements Runnable {
 					consume();
 				}
 			}
-
-		}
+		}*/
 	}
 
 	public void consume() {

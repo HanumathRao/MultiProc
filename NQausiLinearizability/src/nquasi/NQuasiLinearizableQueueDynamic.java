@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class NQuasiLinearizableQueueDynamic {
 	int SIZE = 0 ;
-	ArrayList<Node> nodes = new ArrayList<>();
+	ArrayList<Node> nodes = new ArrayList<Node>();
 	private int head = 0;
 	private int tail = 0;
 	private Random rand;
