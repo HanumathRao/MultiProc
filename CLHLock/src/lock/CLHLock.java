@@ -4,21 +4,31 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class CLHLock implements ILock{
 	private AtomicReference<QNode> tail;
-	private ThreadLocal<QNode> localNode;
-	
+	private ThreadLocal<QNode> myNode;
+	private ThreadLocal<QNode> myPred;
 	public CLHLock() {
-		localNode = new ThreadLocal<QNode>();
+		myNode = new ThreadLocal<QNode>(){
+			@Override
+			protected QNode initialValue(){
+				return new QNode();
+			}
+		};
 	}
 	
 	
 	@Override
 	public void lock(){
-		QNode pred = tail.getAndSet(localNode.get());
+		QNode node = myNode.get();
+		node.setLocked(true);
+		QNode pred = tail.getAndSet(myNode.get());
+		myPred.set(pred);
 		while(pred.isLocked()){}
 	}
 	
 	@Override
 	public void unlock(){
-		tail.get().setLocked(false);
+		QNode node = myNode.get();
+		node.setLocked(false);
+		myNode.set(myPred.get());
 	}
 }

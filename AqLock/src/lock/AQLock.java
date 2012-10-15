@@ -2,6 +2,8 @@ package lock;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import threads.IConst;
+
 public class AQLock implements ILock,IConst{
 	private boolean[] flags = new boolean[SIZE];
 	private AtomicInteger next = new AtomicInteger(0);

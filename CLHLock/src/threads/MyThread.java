@@ -2,13 +2,14 @@ package threads;
 
 import java.util.Random;
 
-import lock.AQLock;
+import lock.CLHLock;
+
 
 public class MyThread implements Runnable, IConst {
 	final int shrmSize = 50;
 	private int[] sharedMem = new int[shrmSize];
 	private Thread[] threads = new Thread[SIZE];
-	private AQLock lock = new AQLock();
+	private CLHLock lock = new CLHLock();
 	private Random rand;
 
 	public MyThread() throws InterruptedException {
