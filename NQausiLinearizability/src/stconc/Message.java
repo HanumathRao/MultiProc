@@ -3,6 +3,7 @@ package stconc;
 public class Message {
 	private int id;
 	
+//	Default constructor
 	public Message(int id, String msg) {
 		this.id = id;
 	}
