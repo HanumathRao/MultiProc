@@ -22,6 +22,7 @@ public class MCSLock implements ILock {
 	@Override
 	public void lock() {
 		MCSNode node = myNode.get();
+		node.setLocked(true);
 		MCSNode myPred = tail.getAndSet(node);
 		if (myPred != null) {
 			myPred.setNext(node);
