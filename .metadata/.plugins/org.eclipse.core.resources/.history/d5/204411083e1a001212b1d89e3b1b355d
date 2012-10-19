@@ -105,8 +105,6 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 					cur = cur.getNext();
 					cur.lock.lock();
 				}
-				
-// Check if found the key and if found then return true				
 				if(key == cur.getIndex()){
 					return true;
 				}
@@ -116,8 +114,6 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 		}finally{
 			pred.lock.unlock();
 		}
-		
-//Not able to find the key		
 		return false;
 	}
 

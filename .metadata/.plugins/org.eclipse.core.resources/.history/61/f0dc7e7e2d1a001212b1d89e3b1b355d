@@ -28,6 +28,7 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 				node.setIndex(key);
 				node.setItem(item);
 				pred.setNext(node);
+				node.setNext(cur);
 				return true;
 			}
 			cur.lock.lock();
@@ -36,8 +37,6 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 					pred.lock.unlock();
 					pred=cur;
 					cur = cur.getNext();
-					if(cur == null)
-						
 					cur.lock.lock();
 				}
 				if(key == cur.getIndex()){
@@ -50,7 +49,6 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 				node.setNext(cur);
 				return true;
 			}finally{
-				if(cur != null)
 				cur.lock.unlock();
 			}
 		
@@ -81,7 +79,6 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 					return true;
 				}
 			}finally{
-				if(cur != null)
 				cur.lock.unlock();
 			}
 			return false;
@@ -92,32 +89,7 @@ public class FineGrainedConcLinkedList<T> implements IDs<T> {
 
 	@Override
 	public boolean contains(T item) {
-		int key = item.hashCode();
-		Node<T> pred = head;
-		try{
-			pred.lock.lock();
-			Node cur = pred.getNext();
-			cur.lock.lock();
-			try{
-				while(key < cur.getIndex()){
-					pred.lock.unlock();
-					pred = cur;
-					cur = cur.getNext();
-					cur.lock.lock();
-				}
-				
-// Check if found the key and if found then return true				
-				if(key == cur.getIndex()){
-					return true;
-				}
-			}finally{
-				cur.lock.unlock();
-			}
-		}finally{
-			pred.lock.unlock();
-		}
-		
-//Not able to find the key		
+		// TODO Auto-generated method stub
 		return false;
 	}
 

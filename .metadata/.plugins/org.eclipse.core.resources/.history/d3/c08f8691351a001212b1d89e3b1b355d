@@ -1,0 +1,33 @@
+package list;
+
+public class OptimisticConLinkedList<T> implements IDs<T> {
+	Node<T> head;
+	
+	public OptimisticConLinkedList() {
+		// TODO Auto-generated constructor stub
+		head = new Node<T>();
+		head.setIndex(head.hashCode());
+		head.setNext(null);
+		head.setItem(null);
+	}
+	
+	@Override
+	public boolean add(T item) {
+		int key = item.hashCode();
+		while(key <)
+		return false;
+	}
+
+	@Override
+	public boolean remove(T item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean contains(T item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
