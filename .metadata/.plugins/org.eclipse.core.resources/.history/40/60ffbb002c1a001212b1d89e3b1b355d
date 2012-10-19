@@ -1,0 +1,16 @@
+import measurement.FineGrainMeasurement;
+
+
+public class Main {
+
+	public static void measureFineGrain(){
+		long startTime = System.nanoTime();
+		FineGrainMeasurement fm = new FineGrainMeasurement();
+		long endTime = System.nanoTime();
+		System.out.println("Time taken "+(endTime-startTime)/1000000);
+	}
+	
+	public static void main(String args[]){
+		Main.measureFineGrain();
+	}
+}
