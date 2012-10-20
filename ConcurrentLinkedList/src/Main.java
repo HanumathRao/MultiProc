@@ -12,10 +12,10 @@ public class Main {
 	}
 	
 	public static void main(String args[]){
-		FineGrainedConcLinkedList<Integer> list = new FineGrainedConcLinkedList<Integer>();
+		/*FineGrainedConcLinkedList<Integer> list = new FineGrainedConcLinkedList<Integer>();
 		for(int i = 0 ; i< 5;  ++i){
 			list.add(i+12);
 		}
-		Main.measureFineGrain(list);
+		Main.measureFineGrain(list);*/
 	}
 }
