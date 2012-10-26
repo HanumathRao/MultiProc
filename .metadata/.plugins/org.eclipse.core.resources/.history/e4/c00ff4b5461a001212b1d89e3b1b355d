@@ -1,0 +1,33 @@
+package lazylist;
+
+import list.IDs;
+
+public class LazyList<T> implements IDs<T>{
+
+	private LazyNode<T> head;
+	
+	
+	@Override
+	public boolean add(T item) {
+		int key = item.hashCode();
+		LazyNode pred = head;
+		LazyNode cur = pred.getNext() ;
+		while(key <= cur.getKey()){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public boolean remove(T item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean contains(T item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

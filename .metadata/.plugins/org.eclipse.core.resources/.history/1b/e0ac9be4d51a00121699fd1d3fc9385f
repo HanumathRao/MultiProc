@@ -1,0 +1,9 @@
+package nonblocking;
+
+import java.util.concurrent.locks.ReentrantLock;
+
+public class NonblockingNode<T>{
+	private T item;
+	private int key;
+	ReentrantLock lock = new ReentrantLock();
+}

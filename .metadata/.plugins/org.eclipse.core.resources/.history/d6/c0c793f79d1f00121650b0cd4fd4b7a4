@@ -1,0 +1,12 @@
+package measurement;
+
+public class MeasureBQ implements Runnable {
+
+	Thread enquerThread = new Thread();
+	Thread dequerThread = new Thread();
+	
+	@Override
+	public void run(){
+		
+	}
+}

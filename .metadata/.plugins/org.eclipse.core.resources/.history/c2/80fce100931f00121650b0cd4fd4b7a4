@@ -1,0 +1,19 @@
+package ds;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class BoundedQ<T> {
+	ReentrantLock enqLock, deqLock;
+	Node head;
+	Node tail;
+	AtomicInteger size;
+	Condition enqCondition;
+	Condition deqCondition;
+	
+	public BoundedQ(){
+		
+	}
+	
+}

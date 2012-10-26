@@ -1,0 +1,22 @@
+package core;
+
+import bq.BoundedQ;
+import measurement.MeasureBQ;
+
+public class Main {
+	public static void measureBQ(){
+		
+	}
+	
+	public static void main(String args[]){
+		BoundedQ<Integer> bQ = new BoundedQ<Integer>();
+		for(int i = 0 ; i< 15; i++){
+			bQ.enqMethod(new Integer(i));
+		}
+		long start = System.nanoTime();
+		MeasureBQ mbq = new MeasureBQ();
+		mbq.startThreads();
+		long end = System.nanoTime();
+		System.out.println("Total time of execution : "+(end-start));
+	}
+}

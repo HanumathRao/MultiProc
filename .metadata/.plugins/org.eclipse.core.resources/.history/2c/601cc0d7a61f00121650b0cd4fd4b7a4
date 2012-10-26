@@ -1,0 +1,9 @@
+package unboundedq;
+
+public class UnboundedLockFreeQ<T> {
+	UBNode<T> head, tail;
+	
+	public void enqMethod(T item){
+		UBNode<T> node = new UBNode<T>(item);
+	}
+}

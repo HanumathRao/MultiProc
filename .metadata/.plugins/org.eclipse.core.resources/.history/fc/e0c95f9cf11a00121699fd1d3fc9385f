@@ -1,0 +1,9 @@
+package nonblocking;
+
+public class Window {
+	NonblockingNode<T> pred, cur;
+	
+	public Window(NonblockingNode<T> pred, NonblockingNode<T> cur) {
+		
+	}
+}

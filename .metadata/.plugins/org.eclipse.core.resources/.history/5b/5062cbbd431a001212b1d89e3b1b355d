@@ -1,0 +1,11 @@
+package lazylist;
+
+import java.util.concurrent.locks.ReentrantLock;
+
+public class LazyNode<T> {
+	private T item;
+	private int key;
+	ReentrantLock lock;
+	
+	
+}

@@ -1,0 +1,6 @@
+package unboundedq;
+
+public class UnboundedLockFreeQ {
+	UBNode<Integer> head, tail;
+	
+}

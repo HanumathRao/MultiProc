@@ -1,0 +1,29 @@
+package lazylist;
+
+import list.IDs;
+
+public class LazyList<T> implements IDs<T>{
+
+	private LazyNode<T> head;
+	
+	
+	@Override
+	public boolean add(T item) {
+		LazyNode pred = head;
+		LazyNode 
+		return false;
+	}
+
+	@Override
+	public boolean remove(T item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean contains(T item) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

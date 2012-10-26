@@ -1,0 +1,20 @@
+package measurement;
+
+import ds.BoundedQ;
+
+public class MeasureBQ implements Runnable {
+
+	BoundedQ<Integer> bQ = new BoundedQ<Integer>();
+	Thread enquerThread = new Thread(this);
+	Thread dequerThread = new Thread(this);
+	
+	public MeasureBQ() {
+		enquerThread.setName("enq");
+		dequerThread.setName("deq");
+	}
+	
+	@Override
+	public void run(){
+		
+	}
+}

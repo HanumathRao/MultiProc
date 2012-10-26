@@ -1,0 +1,31 @@
+package test;
+
+public class LinkedList {
+
+	Node head;
+	Node pred;
+	public LinkedList(){
+		head = new Node<Integer>();
+		head.item = null;
+		pred = head;
+	}
+	public void createList(){
+		for(int i =0 ; i < 20 ; ++i){
+			Node node = new Node<Integer>();
+			node.item = new Integer(i);
+			if(i == 0){
+				head.next.compareAndSet(null, node, false, false);
+			}else{
+				pred.next.compareAndSet(null, node, false, false);
+			}
+			pred =node;
+		}
+	}
+	public void showList(){
+		Node node = head;
+		while(node != null){
+			node = (Node) node.next.getReference();
+			System.out.println(node.item);
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package core;
+
+import ds.BoundedQ;
+
+public class Main {
+	public static void main(String args[]){
+		BoundedQ<Integer> bQ = new BoundedQ<Integer>();
+		for(int i = 0 ; i< 100; i++){
+			
+		}
+	}
+}

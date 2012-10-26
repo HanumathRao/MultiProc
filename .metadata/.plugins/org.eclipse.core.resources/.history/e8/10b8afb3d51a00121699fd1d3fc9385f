@@ -1,0 +1,6 @@
+package nonblocking;
+
+public class NonblockingNode<T>{
+	private T item;
+	private int key;
+}

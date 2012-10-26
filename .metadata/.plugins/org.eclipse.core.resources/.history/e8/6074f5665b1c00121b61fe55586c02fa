@@ -1,0 +1,13 @@
+package test;
+
+public class LinkedList {
+
+	Node head;
+	public LinkedList(){
+		head = new Node<Integer>();
+		head.item = null;
+	}
+	public void createList(){
+		
+	}
+}

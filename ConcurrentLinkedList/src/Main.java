@@ -1,3 +1,4 @@
+import test.LinkedList;
 import list.FineGrainedConcLinkedList;
 import measurement.FineGrainMeasurement;
 
@@ -17,5 +18,8 @@ public class Main {
 			list.add(i+12);
 		}
 		Main.measureFineGrain(list);*/
+		LinkedList list  = new LinkedList();
+		list.createList();
+		list.showList();
 	}
 }

@@ -1,0 +1,5 @@
+package unboundedq;
+
+public class UBNode {
+
+}
