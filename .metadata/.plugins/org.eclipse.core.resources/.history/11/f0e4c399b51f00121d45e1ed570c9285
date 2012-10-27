@@ -1,0 +1,12 @@
+package cs;
+
+import java.util.concurrent.atomic.AtomicReference;
+
+public class ConcStack<T> {
+	AtomicReference<Node> top;
+	Node<T> head;
+	
+	public ConcStack(){
+		head = new Node<T>(null);
+	}
+}

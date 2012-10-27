@@ -1,0 +1,19 @@
+package measurement;
+
+public class MeasureSyncQ implements Runnable{
+	Thread enqThread;
+	Thread deqThread;
+	
+	public MeasureSyncQ() {
+		// TODO Auto-generated constructor stub
+		enqThread = new Thread(this);
+		deqThread = new Thread(this);
+	
+		
+	}
+	
+	@Override
+	public void run(){
+		
+	}
+}

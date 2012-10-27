@@ -1,0 +1,20 @@
+package syncq;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class SyncQ<T> {
+	T item;
+	Condition condition;
+	ReentrantLock lock;
+	
+	public void enq(T item){
+		boolean enquer;
+		lock.lock();
+		try{
+			
+		}finally{
+			
+		}
+	}
+}

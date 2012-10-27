@@ -2,6 +2,7 @@ package core;
 
 import bq.BoundedQ;
 import measurement.MeasureBQ;
+import measurement.MeasureSyncQ;
 
 public class Main {
 	public static void measureBQ(){
@@ -16,7 +17,21 @@ public class Main {
 		System.out.println("Total time of execution : "+(end-start));	
 	}
 	
-	public static void main(String args[]){
+	public static void measureSyncQ(){
+		long startTime = System.nanoTime();
+		MeasureSyncQ msQ = new MeasureSyncQ();
+		msQ.startThreads();
+		long endTime = System.nanoTime();
+		System.out.println("Total time of execution : "+(endTime-startTime));
+		try {
+			Thread.currentThread().join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
+	public static void main(String args[]){
+		measureSyncQ();
 	}
 }

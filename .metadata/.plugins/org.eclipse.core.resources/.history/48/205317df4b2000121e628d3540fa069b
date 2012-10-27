@@ -1,0 +1,7 @@
+package syncq;
+
+public class SyncQ<T> {
+	public void enq(T item){
+		
+	}
+}
